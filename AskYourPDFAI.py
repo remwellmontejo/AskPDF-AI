@@ -61,7 +61,7 @@ def main():
                 qa_chain = build_qa_chain(vector_store)
 
     st.title("Ask your PDF AI using Google Gemini")
-    st.write("Upload a PDF and ask questions based on its content. Summarize data from uploaded files in seconds.")
+    st.write("Upload PDF files and ask questions based on its content. Summarize data from uploaded files in seconds.")
     st.divider()
 
     if 'qa_chain' in locals():
