@@ -35,6 +35,9 @@ def build_qa_chain(vector_store):
     return qa_chain
 
 def main():
+    if "question" not in st.session_state:
+        st.session_state.question = ""
+
     with sidebar:
         st.title('Ask your PDF AI')
         st.subheader('A project for Cognate Elective 3103')
@@ -56,13 +59,17 @@ def main():
                 qa_chain = build_qa_chain(vector_store)
 
     st.title("Ask your PDF AI")
-    st.write("Upload a PDF and ask questions based on its content.")
+    st.write("Upload a PDF and ask questions based on its content. Summarize data from uploaded files in seconds.")
     st.divider()
 
     if 'qa_chain' in locals():
-        question = st.chat_input("Ask a question about the uploaded PDF")
-        if question:
-            answer = qa_chain.run(question)
+        st.session_state.question = st.chat_input("Ask a question about the uploaded PDF")
+        if st.session_state.question:
+            st.subheader("Prompt:")
+            st.write(st.session_state.question)
+            st.divider()
+            answer = qa_chain.run(st.session_state.question)
+            st.subheader("Response:")
             st.write_stream(stream_data(answer))
 
 def stream_data(text):
