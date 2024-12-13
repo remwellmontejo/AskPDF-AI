@@ -41,7 +41,7 @@ def main():
         st.session_state.question = ""
 
     with sidebar:
-        st.header('A project for Cognate Elective 3103')
+        st.header('A project for Cognate Elective 1 (COEN3103)')
         st.text(
             """
                 Montejo, Shane Remwell C.
