@@ -35,12 +35,13 @@ def build_qa_chain(vector_store):
     return qa_chain
 
 def main():
+    st.set_page_config(page_title="AskYourPDFAI")
+
     if "question" not in st.session_state:
         st.session_state.question = ""
 
     with sidebar:
-        st.title('Ask your PDF AI')
-        st.subheader('A project for Cognate Elective 3103')
+        st.header('A project for Cognate Elective 3103')
         st.text(
             """
                 Montejo, Shane Remwell C.
@@ -51,6 +52,7 @@ def main():
         )
         st.divider()
 
+        st.subheader("Upload PDF files")
         uploaded_file = st.file_uploader("Upload files to start.",type="pdf", accept_multiple_files=True)
         if uploaded_file:
             with st.spinner("Reading your document..."):
@@ -58,7 +60,7 @@ def main():
                 vector_store = create_faiss_vector_store(text)
                 qa_chain = build_qa_chain(vector_store)
 
-    st.title("Ask your PDF AI")
+    st.title("Ask your PDF AI using Google Gemini")
     st.write("Upload a PDF and ask questions based on its content. Summarize data from uploaded files in seconds.")
     st.divider()
 
