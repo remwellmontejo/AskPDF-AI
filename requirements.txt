@@ -1,7 +1,6 @@
 langchain
 google
 pypdf2
-langchain_community.vectorstores
 lanchain_community
 streamlit
 langchain_google_genai
