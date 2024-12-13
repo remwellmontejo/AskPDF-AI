@@ -1,0 +1,6 @@
+langchain
+google
+pypdf2
+langchain_community
+streamlit
+langchain_google_genai
