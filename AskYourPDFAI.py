@@ -49,12 +49,12 @@ def main():
                 vector_store = create_faiss_vector_store(text)
                 qa_chain = build_qa_chain(vector_store)
         st.divider()
-        st.text(
+        st.markdown(
             """
-               A project in collaboration with the Adolescent Health and Development (AHD) Department of Muntinlupa, initiated by the students of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)
+               **A project in collaboration with the Adolescent Health and Development (AHD) Department of Muntinlupa, initiated by the students of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)**
             """
         )
-        st.text(
+        st.markdown(
             """
                 Montejo, Shane Remwell C.
                 Nillasca, Justin
