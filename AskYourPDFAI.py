@@ -41,7 +41,7 @@ def main():
         st.session_state.question = ""
 
     with sidebar:
-        st.subheader("Upload PDF files")
+        st.header("Upload PDF files")
         uploaded_file = st.file_uploader("Upload files to start.",type="pdf", accept_multiple_files=True)
         if uploaded_file:
             with st.spinner("Reading your document..."):
