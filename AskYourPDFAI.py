@@ -56,9 +56,9 @@ def main():
         )
         st.caption(
             """
-                Montejo, Shane Remwell C.
-                Nillasca, Justin
-                Mayor, Miguel
+                Montejo, Shane Remwell\n
+                Nillasca, Justin\n
+                Mayor, Miguel\n
                 Medina, Emmanuel
             """
         )
