@@ -41,12 +41,18 @@ def main():
         st.session_state.question = ""
 
     with sidebar:
-        st.header('A project for Cognate Elective 1 (COEN3103)')
+        st.header(
+            """
+               A project on Adolescent Health and Development (AHD) initiated by the students 
+               of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)
+            """
+        )
         st.text(
             """
                 Montejo, Shane Remwell C.
                 Nillasca, Justin
                 Mayor, Miguel
+                Medina, Emmanuel
             """
         )
         st.divider()
