@@ -47,7 +47,6 @@ def main():
                 Montejo, Shane Remwell C.
                 Nillasca, Justin
                 Mayor, Miguel
-                Medina, Emmanuel
             """
         )
         st.divider()
