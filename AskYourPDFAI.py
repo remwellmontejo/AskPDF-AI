@@ -43,8 +43,7 @@ def main():
     with sidebar:
         st.header(
             """
-               A project on Adolescent Health and Development (AHD) initiated by the students 
-               of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)
+               A project on Adolescent Health and Development (AHD) initiated by the students of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)
             """
         )
         st.text(
