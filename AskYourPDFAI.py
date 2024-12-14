@@ -54,7 +54,7 @@ def main():
                **A project in collaboration with the Adolescent Health and Development (AHD) Department of Muntinlupa, initiated by the students of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)**
             """
         )
-        st.markdown(
+        st.text(
             """
                 Montejo, Shane Remwell C.
                 Nillasca, Justin
