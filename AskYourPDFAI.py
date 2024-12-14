@@ -41,9 +41,17 @@ def main():
         st.session_state.question = ""
 
     with sidebar:
-        st.header(
+        st.subheader("Upload PDF files")
+        uploaded_file = st.file_uploader("Upload files to start.",type="pdf", accept_multiple_files=True)
+        if uploaded_file:
+            with st.spinner("Reading your document..."):
+                text = extract_text_from_pdf(uploaded_file)
+                vector_store = create_faiss_vector_store(text)
+                qa_chain = build_qa_chain(vector_store)
+        st.divider()
+        st.text(
             """
-               A project on Adolescent Health and Development (AHD) initiated by the students of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)
+               A project in collaboration with the Adolescent Health and Development (AHD) Department of Muntinlupa, initiated by the students of Colegio de Muntinlupa from CPE3B - Cognate Elective 1 (COEN3103)
             """
         )
         st.text(
@@ -54,15 +62,9 @@ def main():
                 Medina, Emmanuel
             """
         )
-        st.divider()
 
-        st.subheader("Upload PDF files")
-        uploaded_file = st.file_uploader("Upload files to start.",type="pdf", accept_multiple_files=True)
-        if uploaded_file:
-            with st.spinner("Reading your document..."):
-                text = extract_text_from_pdf(uploaded_file)
-                vector_store = create_faiss_vector_store(text)
-                qa_chain = build_qa_chain(vector_store)
+
+        
 
     st.title("Ask your PDF AI using Google Gemini")
     st.write("Upload PDF files and ask questions based on its content. Summarize data from uploaded files in seconds.")
