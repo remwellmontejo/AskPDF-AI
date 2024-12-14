@@ -67,7 +67,7 @@ def main():
         
 
     st.title("Ask your PDF AI using Google Gemini")
-    st.write("Upload PDF files and ask questions based on its content. Summarize data from uploaded files in seconds.")
+    st.write("A PDF reader and summarizer tool. Upload PDF files and ask questions based on its content. Summarize data from uploaded files in seconds.")
     st.divider()
 
     if 'qa_chain' in locals():
